@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+
+	<package name="main-security-default" extends="main-system-default">
+		<interceptors>
+			<interceptor name="security"
+				class="com.hh.usersystem.aop.interceptor.SecurityInterceptor">
+			</interceptor>
+			<interceptor-stack name="securityStack">
+				<interceptor-ref name="systemStack"></interceptor-ref>
+				<interceptor-ref name="security"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="securityStack"></default-interceptor-ref>
+	</package>
+
+	<package name="system" namespace="/" extends="main-system-default">
+		<action name="system-login-*" class="com.hh.usersystem.action.Actionlogin"
+			method="{1}">
+			<result name="desktop">
+				/WEB-INF/classes/com/hh/webapp/desktop/desktop.jsp
+			</result>
+			<result name="login">
+				/login.jsp
+			</result>
+		</action>
+	</package>
+
+</struts>

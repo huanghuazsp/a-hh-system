@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<!-- 配置开发模式，可以打印更多异常细节
+	<constant name="struts.devMode" value="true"></constant> -->
+	<!-- 配置Struts.xml是否能够重新加载，开发的时候有利 
+	<constant name="struts.configuration.xml.reload" value="true"></constant>-->
+	<!-- 配置OGNL表达式访问静态方法
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant> -->
+	<!-- 配置StrutsUI的默认主题 -->
+	<!-- <constant name="struts.ui.theme" value="oatheme"></constant> -->
+	<!-- 配置一次请求最大上传的总文件大小 -->
+	<constant name="struts.multipart.maxSize" value="2048576000"></constant> 
+	<constant name="struts.multipart.saveDir" value="/tmp"></constant>
+	<!-- 配置Struts国际化资源文件 -->
+	<!-- <constant name="struts.custom.i18n.resources" value="oa"></constant> -->
+	<!-- 配置Struts，Spring的自动装配方式为根据类型来装配 <constant name="struts.objectFactory.spring.autoWire" 
+		value="name"> </constant> -->
+	<!-- 通用页面 -->
+	<include file="struts/struts-custom-type.xml"></include>
+	<include file="struts/struts-usersystem.xml"></include>
+	<include file="struts/struts-global.xml"></include>
+</struts>

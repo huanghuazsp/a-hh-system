@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project id="097e970e-378e-4022-9ec5-267b97797268" name="sys" text="sys" type="project">
+  <table id="d1602bff-d742-4e25-8e52-729c3bcb88df" name="file" text="file" type="table">
+    <column defaultValue="" empty="true" id="3f7455b9-eecc-4905-988c-c72c5e83d2e7" length="" name="fileSize" primary="false" text="fileSize" type="String"/>
+    <column defaultValue="" empty="true" id="c11574c5-ccf6-438e-99e8-680c391e1568" length="" name="path" primary="false" text="path" type="String"/>
+    <column defaultValue="" empty="true" id="745cbe2b-825b-495b-8ffa-0532075f56d6" length="" name="type" primary="false" text="type" type="String"/>
+    <column defaultValue="" empty="true" id="8e5e9686-c771-4cfa-88e9-616d7056c461" length="" name="fileType" primary="false" text="fileType" type="String"/>
+    <column defaultValue="" empty="true" id="376959c2-13e6-4bb3-94d6-20e59642c7cb" length="" name="text" primary="false" text="text" type="String"/>
+    <column defaultValue="" empty="true" id="fc369c70-87fd-485f-97db-4cb8302bfc74" length="" name="serviceId" primary="false" text="serviceId" type="String"/>
+    <column defaultValue="" empty="true" id="6756fcc1-e3e9-4b9c-9758-6cddf4ed92bf" length="" name="parentServiceId" primary="false" text="parentServiceId" type="String"/>
+  </table>
+  <table id="bf358224-9ecc-4804-876e-a4bdd734a2dc" name="feastDay" text="feastDay" type="table">
+    <column defaultValue="" empty="true" id="37200f18-25fa-41a4-817c-832b68efc667" length="" name="feastDay" primary="false" text="feastDay" type="String"/>
+  </table>
+</project>

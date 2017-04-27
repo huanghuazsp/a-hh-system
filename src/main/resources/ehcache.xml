@@ -1,0 +1,20 @@
+<ehcache>
+	<diskStore path="java.io.tmpdir" />
+	<!-- 
+		可以设置name值  每个实体可以对应相应 的 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+		maxElementsInMemory : 最大缓存数；
+		eternal：永久有效（true：false）  
+		timeToIdleSeconds：等待多久被移除；
+		timeToLiveSeconds存在了多久被移除 ；
+		overflowToDisk ：溢出了放到硬盘   yes or false
+		
+		memoryStoreEvictionPolicy ( 最近使用 LRU ; 命中率低 LFU ; 把排在前面的移除 FIFO)
+	-->
+	<defaultCache maxElementsInMemory="10000" eternal="false"
+		timeToIdleSeconds="12000" timeToLiveSeconds="120000"
+		overflowToDisk="true" memoryStoreEvictionPolicy="LFU" />
+
+	<cache name="eternal" maxElementsInMemory="10000" eternal="true"
+		memoryStoreEvictionPolicy="LFU" />
+
+</ehcache>

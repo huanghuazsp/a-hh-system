@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<package name="main-system-default" extends="struts-default">
+		<interceptors>
+			<interceptor name="system" class="com.hh.system.aop.SystemInterceptor">
+			</interceptor>
+			<interceptor-stack name="systemStack">
+				<interceptor-ref name="system"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="systemStack"></default-interceptor-ref>
+		<global-results>
+			<result name="main">
+				/
+			</result>
+			<result name="login">/login.jsp</result>
+			<result name="no_authority">
+				base/no_authority.jsp
+			</result>
+		</global-results>
+	</package>
+
+	<package name="js" namespace="/" extends="main-system-default">
+		<action name="system-class-*" class="com.hh.system.action.ActionResourceFile"
+			method="{1}">
+			<result></result>
+		</action>
+	</package>
+	
+	<package name="jsp1" namespace="/" extends="main-system-default">
+		<result-types>
+			<result-type name="classpath"
+				class="com.hh.system.result.ClassPathDispatcherResult"></result-type>
+		</result-types>
+		<action name="outjsp-*-*-*" class="com.hh.system.action.ActionJsp"
+			method="jsp">
+			<result name="jsp" type="classpath">jsp/com/hh/{1}/out/{2}/{3}.jsp</result>
+			<result>/WEB-INF/classes/com/hh/{1}/out/{2}/{3}.jsp</result>
+		</action>
+	</package>
+	
+	<package name="jsp3" namespace="/" extends="main-system-default">
+		<result-types>
+			<result-type name="classpath"
+				class="com.hh.system.result.ClassPathDispatcherResult"></result-type>
+		</result-types>
+		<action name="mobilejsp-*-*-*" class="com.hh.system.action.ActionJsp"
+			method="jsp">
+			<result name="jsp" type="classpath">jsp/com/hh/{1}/mobile/{2}/{3}.jsp</result>
+			<result>/WEB-INF/classes/com/hh/{1}/mobile/{2}/{3}.jsp</result>
+		</action>
+	</package>
+	
+	<package name="struts1" namespace="/" extends="main-system-default">
+		<result-types>
+			<result-type name="classpath"
+				class="com.hh.system.result.ClassPathDispatcherResult"></result-type>
+		</result-types>
+		<action name="out*-*-*" class="com.hh.{1}.action.out.Action{2}"
+			method="{3}">
+			<result>/WEB-INF/classes/com/hh/{1}/out/{2}/{3}.jsp</result>
+			<result name="jsp" type="classpath">jsp/com/hh/{1}/out/{2}/{3}.jsp</result>
+		</action>
+	</package>
+
+	
+	<package name="jsp" namespace="/" extends="main-security-default">
+		<result-types>
+			<result-type name="classpath"
+				class="com.hh.system.result.ClassPathDispatcherResult"></result-type>
+		</result-types>
+		<action name="jsp-*-*-*" class="com.hh.system.action.ActionJsp"
+			method="jsp">
+			<result name="jsp" type="classpath">jsp/com/hh/{1}/{2}/{3}.jsp</result>
+			<result>/WEB-INF/classes/com/hh/{1}/{2}/{3}.jsp</result>
+		</action>
+	</package>
+	
+	<package name="struts" namespace="/" extends="main-security-default">
+		<result-types>
+			<result-type name="classpath"
+				class="com.hh.system.result.ClassPathDispatcherResult"></result-type>
+		</result-types>
+		<action name="*-*-*" class="com.hh.{1}.action.Action{2}"
+			method="{3}">
+			<result>/WEB-INF/classes/com/hh/{1}/{2}/{3}.jsp</result>
+			<result name="jsp" type="classpath">jsp/com/hh/{1}/{2}/{3}.jsp</result>
+		</action>
+	</package>
+
+</struts>

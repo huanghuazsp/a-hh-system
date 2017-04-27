@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project id="0fbc12e4-c7af-4974-8356-26618622829e" name="db" text="db" type="project">
+  <table id="936c4fb4-4e40-401b-bf96-00652b22abd8" name="connect" text="connect" type="table">
+    <column defaultValue="" empty="true" id="dcae03af-5735-4687-9fb8-cc25caaea28a" length="" name="name" primary="false" text="name" type="String"/>
+    <column defaultValue="" empty="true" id="76eba8e9-b5f7-4cbe-9b6e-7f8d14579b0d" length="" name="type" primary="false" text="type" type="String"/>
+    <column defaultValue="" empty="true" id="62abacc6-d447-4f9f-b6bc-ed0e54ef10a2" length="" name="connect" primary="false" text="connect" type="String"/>
+    <column defaultValue="" empty="true" id="4bf9a74f-4192-4481-a2bc-b2d84b6942c6" length="" name="user" primary="false" text="user" type="String"/>
+    <column defaultValue="" empty="true" id="3636be95-ba95-4589-954c-5046b3a3915d" length="" name="password" primary="false" text="password" type="String"/>
+  </table>
+</project>

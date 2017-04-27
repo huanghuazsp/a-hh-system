@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- This file defines a new package to allow its decendents to use the 
+		"classpath" result type. -->
+	<package name="struts-custom-type" namespace="/" extends="main-system-default">
+		<result-types>
+			<result-type name="word" class="com.hh.system.result.WordResult" />
+			<result-type name="excel" class="com.hh.system.result.ExcelResult" />
+		</result-types>
+		<action name="system-excel" class="com.hh.system.action.ExcelAction"
+			method="exportExcel">
+			<result name="excel" type="excel" />
+		</action>
+		<action name="system-word" class="com.hh.system.action.WordAction"
+			method="exportWord">
+			<result name="word" type="word" />
+		</action>
+	</package>
+</struts>
